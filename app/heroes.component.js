@@ -13,7 +13,7 @@ var hero_service_1 = require('./hero.service');
 var HeroesComponent = (function () {
     function HeroesComponent(heroService) {
         this.heroService = heroService;
-        this.title = 'Tour of Heroes';
+        this.title = 'Heroes List';
     }
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
