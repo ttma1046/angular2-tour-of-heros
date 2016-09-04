@@ -13,6 +13,10 @@ import { Hero } from './hero';
 export class HeroDetailComponent implements OnInit {
     hero: Hero;
 
+    save(): void {
+        this.heroService.update(this.hero).then(this.goBack);
+    }
+
     ngOnInit():  void {
         this.route.params.forEach((params: Params) => {
            let id = +params['id'];

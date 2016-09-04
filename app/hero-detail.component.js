@@ -16,6 +16,9 @@ var HeroDetailComponent = (function () {
         this.heroService = heroService;
         this.route = route;
     }
+    HeroDetailComponent.prototype.save = function () {
+        this.heroService.update(this.hero).then(this.goBack);
+    };
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
