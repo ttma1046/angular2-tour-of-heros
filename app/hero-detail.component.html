@@ -8,3 +8,11 @@
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>
 </div>
+
+<div>
+  <img src="{{heroImageUrl}}">
+  <span [style.text-decoration]="lineThrough">
+    {{prefix}} {{hero?.fullName}}
+  </span>
+  <button (click)="delete()">Delete</button>
+</div>

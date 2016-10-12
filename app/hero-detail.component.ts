@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HeroService } from './hero.service';
 
@@ -26,6 +26,12 @@ export class HeroDetailComponent implements OnInit {
 
     goBack(): void {
         window.history.back();
+    }
+
+    deleteRequest = new EventEmitter<Hero>();
+
+    delete() {
+        this.deleteRequest.emit(this.hero);
     }
 
     constructor(private heroService: HeroService, private route: ActivatedRoute    
